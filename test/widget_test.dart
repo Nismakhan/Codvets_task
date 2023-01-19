@@ -7,13 +7,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:ui/app/socail_media.dart';
 
 import 'package:ui/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const Ui());
+    await tester.pumpWidget(const SocailMedia());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
