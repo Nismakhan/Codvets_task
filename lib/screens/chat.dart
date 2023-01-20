@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'package:ui/utils/mediaquery.dart';
@@ -79,89 +81,96 @@ class Chat extends StatelessWidget {
                 height: 20,
               ),
               const MessagesContainer(
-                clrForTet: Colors.grey,
+                clrForTet: Color.fromARGB(255, 114, 114, 114),
                 text: "YERTURDAY",
                 width: 150,
                 height: 40,
-                clrForBackground: Colors.grey,
+                clrForBackground: Color.fromARGB(255, 211, 211, 211),
               ),
-              const SizedBox(
-                height: 30,
-              ),
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: MessagesContainer(
-                  clrForTet: Colors.grey,
-                  text: "Hi rehan How are you?",
-                  width: 170,
-                  height: 60,
-                  clrForBackground: Colors.grey,
-                ),
-              ),
-              const Align(
-                alignment: Alignment.centerRight,
-                child: MessagesContainer(
-                  clrForTet: Colors.grey,
-                  text: "I m good what about you?",
-                  width: 180,
-                  height: 60,
-                  clrForBackground: Colors.amber,
-                ),
-              ),
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: MessagesContainer(
-                  clrForTet: Colors.grey,
-                  text: "Do you want a burgur?",
-                  width: 180,
-                  height: 60,
-                  clrForBackground: Colors.grey,
-                ),
-              ),
-              const Align(
-                alignment: Alignment.centerRight,
-                child: MessagesContainer(
-                  clrForTet: Colors.grey,
-                  text: "Would be awesome..",
-                  width: 180,
-                  height: 60,
-                  clrForBackground: Colors.blue,
-                ),
-              ),
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: MessagesContainer(
-                  clrForTet: Colors.grey,
-                  text: "Okey then wait for it",
-                  width: 170,
-                  height: 60,
-                  clrForBackground: Colors.grey,
-                ),
-              ),
-              const Align(
-                alignment: Alignment.centerRight,
-                child: MessagesContainer(
-                  clrForTet: Colors.grey,
-                  text: "Thank you",
-                  width: 170,
-                  height: 60,
-                  clrForBackground: Colors.blue,
-                ),
-              ),
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: MessagesContainer(
-                  clrForTet: Colors.grey,
-                  text: "Mention NOt",
-                  width: 170,
-                  height: 60,
-                  clrForBackground: Colors.grey,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Column(
+                  children: const [
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: MessagesContainer(
+                        clrForTet: Colors.grey,
+                        text: "Hi rehan How are you?",
+                        width: 170,
+                        height: 60,
+                        clrForBackground: Color.fromARGB(255, 211, 211, 211),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: MessagesContainer(
+                        clrForTet: Colors.white,
+                        text: "I m good what about you?",
+                        width: 190,
+                        height: 60,
+                        clrForBackground: Colors.blue,
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: MessagesContainer(
+                        clrForTet: Colors.grey,
+                        text: "Do you want a burgur?",
+                        width: 180,
+                        height: 60,
+                        clrForBackground: Color.fromARGB(255, 211, 211, 211),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: MessagesContainer(
+                        clrForTet: Colors.white,
+                        text: "Would be awesome..",
+                        width: 180,
+                        height: 60,
+                        clrForBackground: Colors.blue,
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: MessagesContainer(
+                        clrForTet: Colors.grey,
+                        text: "Okey then wait for it",
+                        width: 170,
+                        height: 60,
+                        clrForBackground: Color.fromARGB(255, 211, 211, 211),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: MessagesContainer(
+                        clrForTet: Colors.white,
+                        text: "Thank you",
+                        width: 170,
+                        height: 60,
+                        clrForBackground: Colors.blue,
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: MessagesContainer(
+                        clrForTet: Colors.grey,
+                        text: "Mention NOt",
+                        width: 170,
+                        height: 60,
+                        clrForBackground: Color.fromARGB(255, 211, 211, 211),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 40, top: 40),
+                    padding: const EdgeInsets.only(left: 40, top: 20),
                     child: Container(
                       width: 50,
                       height: 70,
@@ -173,16 +182,44 @@ class Chat extends StatelessWidget {
                     ),
                   ),
                   const Padding(
-                    padding: EdgeInsets.only(top: 36.0, left: 9),
+                    padding: EdgeInsets.only(top: 20.0, left: 9),
                     child: MessagesContainer(
                       text: "Type Message Here",
-                      clrForTet: Colors.grey,
-                      clrForBackground: Colors.grey,
+                      clrForTet: Colors.black,
+                      clrForBackground: Color.fromARGB(255, 185, 185, 185),
                       width: 260,
                       height: 50,
                     ),
                   )
                 ],
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    ChatScreenBottemWidgets(
+                      icondata: Icons.image,
+                      clr: Colors.blue,
+                      text: "Images",
+                    ),
+                    ChatScreenBottemWidgets(
+                      icondata: Icons.location_on,
+                      clr: Colors.purple,
+                      text: "Location",
+                    ),
+                    ChatScreenBottemWidgets(
+                      icondata: Icons.file_copy,
+                      clr: Colors.orange,
+                      text: "File",
+                    ),
+                    ChatScreenBottemWidgets(
+                      icondata: Icons.contact_phone,
+                      clr: Colors.pink,
+                      text: "Contact",
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -191,6 +228,7 @@ class Chat extends StatelessWidget {
     );
   }
 }
+
 
 
 

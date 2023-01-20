@@ -25,14 +25,14 @@ class MessagesContainer extends StatelessWidget {
   const MessagesContainer({
     Key? key,
     required this.text,
-    required this.clrForTet,
-    required this.clrForBackground,
+    this.clrForTet,
+    this.clrForBackground,
     required this.width,
     required this.height,
   }) : super(key: key);
   final String text;
-  final MaterialColor clrForTet;
-  final MaterialColor clrForBackground;
+  final Color? clrForTet;
+  final Color? clrForBackground;
   final double width;
   final double height;
   @override
@@ -41,8 +41,7 @@ class MessagesContainer extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 209, 209, 209),
-          borderRadius: BorderRadius.circular(19)),
+          color: clrForBackground, borderRadius: BorderRadius.circular(19)),
       child: Center(
         child: Text(
           text,
@@ -53,6 +52,42 @@ class MessagesContainer extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class ChatScreenBottemWidgets extends StatelessWidget {
+  const ChatScreenBottemWidgets({
+    Key? key,
+    this.clr,
+    required this.icondata,
+    required this.text,
+  }) : super(key: key);
+  final Color? clr;
+  final IconData icondata;
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          width: 60,
+          height: 55,
+          decoration: BoxDecoration(
+            color: clr,
+            shape: BoxShape.circle,
+          ),
+          child: Icon(
+            icondata,
+            size: 35,
+            color: Colors.white,
+          ),
+        ),
+        Text(
+          text,
+          style: TextStyle(fontSize: 20),
+        ),
+      ],
     );
   }
 }
