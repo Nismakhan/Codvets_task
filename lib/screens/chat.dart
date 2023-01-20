@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:ui/utils/mediaquery.dart';
 
+import '../widgets/widgets.dart';
+
 class Chat extends StatelessWidget {
   Chat({
     super.key,
@@ -76,22 +78,111 @@ class Chat extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                width: 120,
+              const MessagesContainer(
+                clrForTet: Colors.grey,
+                text: "YERTURDAY",
+                width: 150,
                 height: 40,
-                decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 209, 209, 209),
-                    borderRadius: BorderRadius.circular(19)),
-                child: const Center(
-                  child: Text(
-                    "YESTERDAY",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                      color: Color.fromARGB(255, 114, 114, 114),
+                clrForBackground: Colors.grey,
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: MessagesContainer(
+                  clrForTet: Colors.grey,
+                  text: "Hi rehan How are you?",
+                  width: 170,
+                  height: 60,
+                  clrForBackground: Colors.grey,
+                ),
+              ),
+              const Align(
+                alignment: Alignment.centerRight,
+                child: MessagesContainer(
+                  clrForTet: Colors.grey,
+                  text: "I m good what about you?",
+                  width: 180,
+                  height: 60,
+                  clrForBackground: Colors.amber,
+                ),
+              ),
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: MessagesContainer(
+                  clrForTet: Colors.grey,
+                  text: "Do you want a burgur?",
+                  width: 180,
+                  height: 60,
+                  clrForBackground: Colors.grey,
+                ),
+              ),
+              const Align(
+                alignment: Alignment.centerRight,
+                child: MessagesContainer(
+                  clrForTet: Colors.grey,
+                  text: "Would be awesome..",
+                  width: 180,
+                  height: 60,
+                  clrForBackground: Colors.blue,
+                ),
+              ),
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: MessagesContainer(
+                  clrForTet: Colors.grey,
+                  text: "Okey then wait for it",
+                  width: 170,
+                  height: 60,
+                  clrForBackground: Colors.grey,
+                ),
+              ),
+              const Align(
+                alignment: Alignment.centerRight,
+                child: MessagesContainer(
+                  clrForTet: Colors.grey,
+                  text: "Thank you",
+                  width: 170,
+                  height: 60,
+                  clrForBackground: Colors.blue,
+                ),
+              ),
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: MessagesContainer(
+                  clrForTet: Colors.grey,
+                  text: "Mention NOt",
+                  width: 170,
+                  height: 60,
+                  clrForBackground: Colors.grey,
+                ),
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 40, top: 40),
+                    child: Container(
+                      width: 50,
+                      height: 70,
+                      decoration: const BoxDecoration(
+                        color: Colors.grey,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(Icons.add),
                     ),
                   ),
-                ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 36.0, left: 9),
+                    child: MessagesContainer(
+                      text: "Type Message Here",
+                      clrForTet: Colors.grey,
+                      clrForBackground: Colors.grey,
+                      width: 260,
+                      height: 50,
+                    ),
+                  )
+                ],
               ),
             ],
           ),
@@ -100,6 +191,8 @@ class Chat extends StatelessWidget {
     );
   }
 }
+
+
 
 
 // class ChatData {
