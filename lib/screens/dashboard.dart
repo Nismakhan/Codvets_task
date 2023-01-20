@@ -38,7 +38,10 @@ class Dashboard extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 18.0),
-                          child: Image.asset("assets/orange curve1.png"),
+                          child: Image.asset(
+                            "assets/logo.png",
+                            width: 40,
+                          ),
                         ),
                         Container(
                           child: Row(
@@ -316,6 +319,36 @@ class Dashboard extends StatelessWidget {
                     ),
                     const Text(
                       "He also has a handle on social media, and\n his blog focus on social media photo...",
+                    ),
+                    Stack(
+                      clipBehavior: Clip.none,
+                      children: const [
+                        LikedContainers(
+                          img: "assets/1.png",
+                          clr: Color.fromARGB(255, 143, 200, 247),
+                        ),
+                        Positioned(
+                          left: 15,
+                          child: LikedContainers(
+                            img: "assets/2.png",
+                            clr: Color.fromARGB(255, 255, 246, 164),
+                          ),
+                        ),
+                        Positioned(
+                          left: 30,
+                          child: LikedContainers(
+                            img: "assets/3.png",
+                            clr: Color.fromARGB(255, 163, 236, 166),
+                          ),
+                        ),
+                        Positioned(
+                          left: 45,
+                          child: LikedContainers(
+                            img: "assets/3.png",
+                            clr: Color.fromARGB(255, 172, 212, 245),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
