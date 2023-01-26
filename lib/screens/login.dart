@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui/app/router.dart';
+
 import 'package:ui/utils/mediaquery.dart';
 
 class Login extends StatelessWidget {
@@ -145,13 +146,13 @@ class Login extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 30),
-                  child: Container(
+                  padding: const EdgeInsets.only(top: 30),
+                  child: SizedBox(
                     width: screenWidth(context) * 0.8,
                     height: screenHeight(context) * 0.08,
                     child: OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                        side: BorderSide(
+                        side: const BorderSide(
                           color: Colors.black,
                           width: 1,
                         ),
@@ -194,8 +195,11 @@ class Login extends StatelessWidget {
                   ),
                   child: OutlinedButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(
-                          context, AppRouter.dashboard);
+                      Navigator.pushNamed(
+                        context, AppRouter.dashboard,
+                        // arguments: UserStories(
+                        //     name: "nisma", profilePic: "assets/1.png")
+                      );
                     },
                     child: const Text(
                       "Log In",

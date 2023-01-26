@@ -1,64 +1,92 @@
 {
-    "usersInfo": {
+    "usersStory": {
         "user1": {
             "name": "Nisma",
-            "profilePicture": "assets/1.png",
-            "post": "https://blog.hootsuite.com/wp-content/uploads/2022/06/Instagram-Apps-Cover-Photo-556x556.png",
-            "about": "what is this? what is this. what is this?, what is this? what is this. what is this?",
-            "accopation": "photographer"
+            "profilePicture": "assets/1.png"
         },
         "user2": {
             "name": "Nabiya",
-            "profilePicture": "assets/2.png",
-            "post": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/FBI_SWAT_team_Watervliet_Arsenal.jpg/1200px-FBI_SWAT_team_Watervliet_Arsenal.jpg",
-            "about": "what is this? what is this. what is this?, what is this? what is this. what is this?",
-            "accopation": "Software Engineer"
+            "profilePicture": "assets/2.png"
         },
         "user3": {
             "name": "Saad",
-            "profilePicture": "assets/3.png",
-            "post": "",
-            "about": "what is this? what is this. what is this?, what is this? what is this. what is this?",
-            "accopation": "Doctor"
+            "profilePicture": "assets/3.png"
         },
         "user4": {
             "name": "Rimsha",
-            "profilePicture": "assets/4.png",
-            "post": "",
-            "about": "what is this? what is this. what is this?, what is this? what is this. what is this?",
-            "accopation": "Police officer"
+            "profilePicture": "assets/4.png"
         },
         "user5": {
             "name": "Saqlain kamal",
-            "profilePicture": "assets/5.png",
-            "post": "",
-            "about": "what is this? what is this. what is this?, what is this? what is this. what is this?",
-            "accopation": "Cricketer"
+            "profilePicture": "assets/5.png"
         },
         "user6": {
             "name": "Aiman",
-            "profilePicture": "assets/6.png",
-            "post": "",
-            "about": "what is this? what is this. what is this?, what is this? what is this. what is this?",
-            "accopation": "Singer"
+            "profilePicture": "assets/6.png"
         },
         "user7": {
             "name": "Marukh",
-            "profilePicture": "assets/1.png",
-            "post": "",
+            "profilePicture": "assets/1.png"
+        }
+    },
+    "post": {
+        "Postuser1": {
+            "name": "Bamsel Cooper",
+            "postAsset": "https://blog.hootsuite.com/wp-content/uploads/2022/06/Instagram-Apps-Cover-Photo-556x556.png",
             "about": "what is this? what is this. what is this?, what is this? what is this. what is this?",
-            "accopation": "Painter"
+            "accopation": "photographer"
+        },
+        "Postuser2": {
+            "name": "Nisma",
+            "post": "https://blog.hootsuite.com/wp-content/uploads/2022/06/Instagram-Apps-Cover-Photo-556x556.png",
+            "about": "what is this? what is this. what is this?, what is this? what is this. what is this?",
+            "accopation": "Doctor"
         }
     },
     "messages": {
-        "sentByMe": [
-            "Hi, Rehan How are you?",
-            "Do You Want a burger?",
-            "Okey take care of yourself"
-        ],
-        "sentByOther": [
-            "I'm good. what about you?",
-            "Would be awesome."
-        ]
+        "sentByMe": {
+            "ListOfMyMessages": [
+                "Hi how are you? ",
+                "I am also ok ..",
+                "ok good night"
+            ],
+            "ListOfOthersMessages": [
+                "I am Good what about you? ",
+                "Thats Good....",
+                "Okey take care"
+            ]
+        }
+    },
+    "dummy": {
+        "id1": {
+            "name": "nisma",
+            "id": 10946,
+            "date": "2020-11-10",
+            "study": "Software Engineering"
+        },
+        "id2": {
+            "name": "kamal",
+            "id": 10832,
+            "date": "2020-10-10",
+            "study": "Spots"
+        },
+        "id3": {
+            "name": "Rimsha",
+            "id": 10828,
+            "date": "2020-10-10",
+            "study": "MBBS"
+        },
+        "id4": {
+            "name": "Umair",
+            "id": 10900,
+            "date": "2020-10-10",
+            "study": "Data Science"
+        },
+        "id5": {
+            "name": "Sadia",
+            "id": 11334,
+            "date": "2020-10-10",
+            "study": "Gaming"
+        }
     }
 }

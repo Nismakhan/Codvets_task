@@ -3,7 +3,8 @@ import 'package:ui/app/splash.dart';
 import 'package:ui/screens/chat.dart';
 import 'package:ui/screens/dashboard.dart';
 import 'package:ui/screens/login.dart';
-import 'package:ui/screens/signUp.dart';
+import 'package:ui/screens/messages_screen.dart';
+import 'package:ui/screens/sign_up.dart';
 import 'package:ui/screens/user.dart';
 
 class AppRouter {
@@ -13,6 +14,7 @@ class AppRouter {
   static const String dashboard = "/dashboard";
   static const String chat = "/chat";
   static const String user = "/user";
+  static const String messagesScreen = "/messages_screen";
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -29,16 +31,26 @@ class AppRouter {
           builder: ((context) => const SignUp()),
         );
       case dashboard:
+        // final args = settings.arguments as UserStories;
         return MaterialPageRoute(
-          builder: ((context) => Dashboard()),
+          builder: ((context) => Dashboard(
+              // args: args,
+              )),
         );
       case chat:
         return MaterialPageRoute(
           builder: ((context) => Chat()),
         );
-      case user:
+      case messagesScreen:
         return MaterialPageRoute(
-          builder: ((context) => const User()),
+          builder: ((context) => MessagesScreen()),
+        );
+      case user:
+        // final ar = settings.arguments as Dummy2;
+        return MaterialPageRoute(
+          builder: ((context) => User(
+              // args: ar,
+              )),
         );
 
       // case chat:

@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 import 'package:ui/utils/mediaquery.dart';
@@ -56,7 +54,7 @@ class Chat extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                trailing: Container(
+                trailing: SizedBox(
                   width: screenWidth(context) * 0.2,
                   child: Row(
                     children: const [

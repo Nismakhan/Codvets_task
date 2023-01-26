@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+
 import 'package:ui/app/router.dart';
+
 import 'package:ui/utils/mediaquery.dart';
 
+import '../widgets/bottem_navigaton_bar.dart';
 import '../widgets/widgets.dart';
 
 class Dashboard extends StatelessWidget {
   Dashboard({super.key});
-  List circularAvatars = [
+  // final UserStories args;
+
+  final List circularAvatars = [
     "assets/1.png",
     "assets/2.png",
     "assets/3.png",
@@ -14,6 +19,24 @@ class Dashboard extends StatelessWidget {
     "assets/5.png",
     "assets/6.png",
     "assets/7.png",
+  ];
+  final colors = [
+    const Color.fromARGB(255, 241, 187, 184),
+    const Color.fromARGB(255, 230, 215, 172),
+    const Color.fromARGB(255, 178, 186, 231),
+    const Color.fromARGB(255, 174, 205, 231),
+    const Color.fromARGB(255, 238, 168, 191),
+    const Color.fromARGB(255, 187, 158, 236),
+    const Color.fromARGB(255, 156, 255, 245),
+  ];
+  final names = [
+    "Nisma",
+    "Rimsha",
+    "Saqlain",
+    "Aiman",
+    "Marukh",
+    "Saad",
+    "Nabiya"
   ];
 
   @override
@@ -25,7 +48,7 @@ class Dashboard extends StatelessWidget {
           children: [
             Container(
               width: screenWidth(context),
-              height: screenHeight(context) * 0.17,
+              height: screenHeight(context) * 0.17711,
               decoration: const BoxDecoration(
                 color: Colors.white,
               ),
@@ -43,85 +66,64 @@ class Dashboard extends StatelessWidget {
                             width: 40,
                           ),
                         ),
-                        Container(
-                          child: Row(
-                            children: [
-                              ContainerContainCard(
-                                stack: Stack(
-                                  clipBehavior: Clip.none,
-                                  children: [
-                                    Image.asset(
-                                      "assets/notification.png",
-                                      width: 20,
-                                      height: 40,
-                                    ),
-                                    Positioned(
-                                      top: -13,
-                                      left: 20,
-                                      child: Image.asset(
-                                          "assets/small orange.png"),
-                                    )
-                                  ],
-                                ),
+                        Row(
+                          children: [
+                            IconsCardsForDashboardOnTop(
+                              stack: Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  Image.asset(
+                                    "assets/notification.png",
+                                    width: 20,
+                                    height: 40,
+                                  ),
+                                  Positioned(
+                                    top: -13,
+                                    left: 20,
+                                    child:
+                                        Image.asset("assets/small orange.png"),
+                                  )
+                                ],
                               ),
-                              ContainerContainCard(
-                                stack: Stack(
-                                  clipBehavior: Clip.none,
-                                  children: [
-                                    Image.asset(
-                                      "assets/message.png",
-                                      width: 20,
-                                      height: 40,
-                                    ),
-                                    Positioned(
-                                      top: -13,
-                                      left: 20,
-                                      child: Container(
-                                        width: 30,
-                                        height: 16,
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(6),
-                                          color: Colors.red,
-                                        ),
-                                        child: const Center(
-                                            child: Text(
-                                          "34+",
-                                          style: TextStyle(color: Colors.white),
-                                        )),
+                            ),
+                            IconsCardsForDashboardOnTop(
+                              stack: Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  Image.asset(
+                                    "assets/message.png",
+                                    width: 20,
+                                    height: 40,
+                                  ),
+                                  Positioned(
+                                    top: -13,
+                                    left: 20,
+                                    child: Container(
+                                      width: 30,
+                                      height: 16,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(6),
+                                        color: Colors.red,
                                       ),
+                                      child: const Center(
+                                          child: Text(
+                                        "34+",
+                                        style: TextStyle(color: Colors.white),
+                                      )),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
                   ),
-                  Expanded(
-                    child: ListView.builder(
-                      itemCount: circularAvatars.length,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) {
-                        final circleAvatars = circularAvatars[index];
-                        return Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: Container(
-                            width: 50,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 199, 230, 255),
-                              shape: BoxShape.circle,
-                              border: Border.all(color: Colors.red, width: 3),
-                            ),
-                            child: Image.asset(circleAvatars),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
+                  ListviewForStories(
+                      circularAvatars: circularAvatars,
+                      colors: colors,
+                      names: names),
                 ],
               ),
             ),
@@ -323,31 +325,39 @@ class Dashboard extends StatelessWidget {
                     Stack(
                       clipBehavior: Clip.none,
                       children: const [
-                        LikedContainers(
+                        ListOfPersonsLikedThePost(
                           img: "assets/1.png",
                           clr: Color.fromARGB(255, 143, 200, 247),
                         ),
                         Positioned(
                           left: 15,
-                          child: LikedContainers(
+                          child: ListOfPersonsLikedThePost(
                             img: "assets/2.png",
                             clr: Color.fromARGB(255, 255, 246, 164),
                           ),
                         ),
                         Positioned(
                           left: 30,
-                          child: LikedContainers(
+                          child: ListOfPersonsLikedThePost(
                             img: "assets/3.png",
                             clr: Color.fromARGB(255, 163, 236, 166),
                           ),
                         ),
                         Positioned(
                           left: 45,
-                          child: LikedContainers(
+                          child: ListOfPersonsLikedThePost(
                             img: "assets/3.png",
                             clr: Color.fromARGB(255, 172, 212, 245),
                           ),
                         ),
+                        Positioned(
+                          left: 100,
+                          top: 7,
+                          child: Text(
+                            "Liked By Hayra and 1K other",
+                            style: TextStyle(color: Colors.red),
+                          ),
+                        )
                       ],
                     ),
                   ],
@@ -357,62 +367,16 @@ class Dashboard extends StatelessWidget {
             const SizedBox(
               height: 45,
             ),
-            Container(
-              width: screenWidth(context),
-              height: screenHeight(context) * 0.1,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-              ),
-              child: Row(
-                children: [
-                  const SizedBox(
-                    width: 35,
-                  ),
-                  GestureDetector(
-                    child: const Icon(
-                      Icons.home,
-                      size: 50,
-                    ),
-                    onTap: () =>
-                        Navigator.of(context).pushNamed(AppRouter.dashboard),
-                  ),
-                  const SizedBox(
-                    width: 35,
-                  ),
-                  GestureDetector(
-                    child: const Icon(
-                      Icons.person,
-                      size: 50,
-                    ),
-                    onTap: () =>
-                        Navigator.of(context).pushNamed(AppRouter.user),
-                  ),
-                  const SizedBox(
-                    width: 35,
-                  ),
-                  GestureDetector(
-                    child: const Icon(
-                      Icons.explore,
-                      size: 50,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 35,
-                  ),
-                  GestureDetector(
-                    child: const Icon(
-                      Icons.chat,
-                      size: 50,
-                    ),
-                    onTap: () =>
-                        Navigator.of(context).pushNamed(AppRouter.chat),
-                  ),
-                ],
-              ),
-            ),
+            const BottemNavigationBar(),
           ],
         ),
       ),
     );
   }
+}
+
+class UserStories {
+  String name;
+  String profilePic;
+  UserStories({required this.name, required this.profilePic});
 }

@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
-class ContainerContainCard extends StatelessWidget {
-  const ContainerContainCard({Key? key, required this.stack}) : super(key: key);
+class IconsCardsForDashboardOnTop extends StatelessWidget {
+  const IconsCardsForDashboardOnTop({Key? key, required this.stack})
+      : super(key: key);
   final Stack stack;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 60,
       height: 60,
       child: Card(
         elevation: 7,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(17),
+          borderRadius: BorderRadius.circular(40),
         ),
         child: Center(
           child: stack,
@@ -85,15 +86,15 @@ class ChatScreenBottemWidgets extends StatelessWidget {
         ),
         Text(
           text,
-          style: TextStyle(fontSize: 20),
+          style: const TextStyle(fontSize: 20),
         ),
       ],
     );
   }
 }
 
-class LikedContainers extends StatelessWidget {
-  const LikedContainers({
+class ListOfPersonsLikedThePost extends StatelessWidget {
+  const ListOfPersonsLikedThePost({
     Key? key,
     this.clr,
     required this.img,
@@ -111,6 +112,52 @@ class LikedContainers extends StatelessWidget {
       child: Image.asset(
         img,
         width: 40,
+      ),
+    );
+  }
+}
+
+class ListviewForStories extends StatelessWidget {
+  const ListviewForStories({
+    Key? key,
+    required this.circularAvatars,
+    required this.colors,
+    required this.names,
+  }) : super(key: key);
+
+  final List circularAvatars;
+  final List<Color> colors;
+  final List<String> names;
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView.builder(
+        itemCount: circularAvatars.length,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          final avatars = circularAvatars[index];
+          final color = colors[index];
+
+          return Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: Column(
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: color,
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.red, width: 3),
+                  ),
+                  child: Image.asset(avatars),
+                ),
+                Text(names[index]),
+              ],
+            ),
+          );
+        },
       ),
     );
   }

@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../app/router.dart';
 import '../utils/mediaquery.dart';
-
-// void main() {
-//   runApp(const login());
-// }
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -222,7 +217,7 @@ class SignUp extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 20),
-                child: Container(
+                child: SizedBox(
                   width: screenWidth(context) * 0.8,
                   height: screenHeight(context) * 0.08,
                   child: OutlinedButton(
